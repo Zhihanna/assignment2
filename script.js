@@ -33,6 +33,7 @@ function addUserMarker(location) {
         icon: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
     });
 }
+
 function filterMarkers(type) {
     markers.forEach((marker) => {
         if (type === "all" || marker.type === type) {
