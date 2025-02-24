@@ -55,6 +55,40 @@ function initMap() {
     addMarkers();
 }
 
+document.getElementById("add-marker-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const address = document.getElementById("address").value;
+    const title = document.getElementById("title").value;
+    const category = document.getElementById("category").value;
+
+    const geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ address: address }, (results, status) => {
+        if (status === "OK") {
+            const location = results[0].geometry.location;
+            addMarker(location, title, category);
+        } else {
+            console.error("Geocode failed:", status);
+        }
+    });
+});
+
+function addMarker(location, title, category) {
+    const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: title,
+        type: category,
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+        content: `<h3>${title}</h3><p>Category: ${category}</p>`,
+    });
+
+    marker.addListener("click", () => {
+        infowindow.open(map, marker);
+    });
+}
+
 function addMarkers() {
     // Example data for markers
     const locations = [
