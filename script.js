@@ -5,7 +5,34 @@ document.getElementById("filter-all").addEventListener("click", () => filterMark
 document.getElementById("filter-type1").addEventListener("click", () => filterMarkers("type1"));
 document.getElementById("filter-type2").addEventListener("click", () => filterMarkers("type2"));
 document.getElementById("filter-type3").addEventListener("click", () => filterMarkers("type3"));
+document.getElementById("get-location").addEventListener("click", getUserLocation);
 
+function getUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+                addUserMarker(userLocation);
+            },
+            (error) => {
+                console.error("Error getting user location:", error);
+            }
+        );
+    } else {
+        console.error("Geolocation is not supported by this browser.");
+    }
+}
+
+function addUserMarker(location) {
+    const userMarker = new google.maps.Marker({
+        position: location,
+        map: map,
+        icon: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+    });
+}
 function filterMarkers(type) {
     markers.forEach((marker) => {
         if (type === "all" || marker.type === type) {
