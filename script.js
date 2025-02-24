@@ -94,7 +94,14 @@ function addMarkers() {
     const locations = [
         { lat: 43.2557, lng: -79.8711, title: "Location 1", info: "Info about Location 1", type: "type1" },
         { lat: 43.2600, lng: -79.8800, title: "Location 2", info: "Info about Location 2", type: "type2" },
-        // Add at least 10 locations
+        { lat: 43.2650, lng: -79.8900, title: "Location 3", info: "Info about Location 3", type: "type3" },
+        { lat: 43.2700, lng: -79.9000, title: "Location 4", info: "Info about Location 4", type: "type1" },
+        { lat: 43.2750, lng: -79.9100, title: "Location 5", info: "Info about Location 5", type: "type2" },
+        { lat: 43.2800, lng: -79.9200, title: "Location 6", info: "Info about Location 6", type: "type3" },
+        { lat: 43.2850, lng: -79.9300, title: "Location 7", info: "Info about Location 7", type: "type1" },
+        { lat: 43.2900, lng: -79.9400, title: "Location 8", info: "Info about Location 8", type: "type2" },
+        { lat: 43.2950, lng: -79.9500, title: "Location 9", info: "Info about Location 9", type: "type3" },
+        { lat: 43.3000, lng: -79.9600, title: "Location 10", info: "Info about Location 10", type: "type1" },
     ];
 
     locations.forEach((location) => {
