@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Map Application</title>
+    <!-- Bootstrap Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="text-center my-4">Map Application</h1>
+        <div class="btn-group my-3">
+            <button id="filter-all" class="btn btn-primary">Show All</button>
+            <button id="filter-type1" class="btn btn-secondary">Button 1</button>
+            <button id="filter-type2" class="btn btn-secondary">Button 2</button>
+            <button id="filter-type3" class="btn btn-secondary">Button 3</button>
+        </div>
+        <div id="map"></div>
+        <form id="add-marker-form" class="my-3">
+            <input type="text" id="address" placeholder="Enter address" required class="form-control mb-2">
+            <input type="text" id="title" placeholder="Enter title" required class="form-control mb-2">
+            <select id="category" class="form-control mb-2">
+                <option value="type1">Type 1</option>
+                <option value="type2">Type 2</option>
+                <option value="type3">Type 3</option>
+            </select>
+            <button type="submit" class="btn btn-success">Add Marker</button>
+        </form>
+        <button id="get-location" class="btn btn-info my-3">Show My Location</button>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYLxPJsy_C70jZkPIltdvKxPOQIPoYl5s&callback=initMap" async defer></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
