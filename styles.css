@@ -3,3 +3,15 @@
     width: 100%;
     margin-bottom: 20px;
 }
+
+@media (max-width: 768px) {
+    #map {
+        height: 400px;
+    }
+    .btn_group {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}
