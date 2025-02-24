@@ -1,6 +1,21 @@
 let map;
 let markers = [];
 
+document.getElementById("filter-all").addEventListener("click", () => filterMarkers("all"));
+document.getElementById("filter-type1").addEventListener("click", () => filterMarkers("type1"));
+document.getElementById("filter-type2").addEventListener("click", () => filterMarkers("type2"));
+document.getElementById("filter-type3").addEventListener("click", () => filterMarkers("type3"));
+
+function filterMarkers(type) {
+    markers.forEach((marker) => {
+        if (type === "all" || marker.type === type) {
+            marker.setVisible(true);
+        } else {
+            marker.setVisible(false);
+        }
+    });
+}
+
 function initMap() {
     // Set the initial center of the map (e.g., Hamilton, ON)
     const center = { lat: 43.2557, lng: -79.8711 };
